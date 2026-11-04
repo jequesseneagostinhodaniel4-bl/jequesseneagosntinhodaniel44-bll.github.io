@@ -1,0 +1,335 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#0d1b2a;
+--card:#1b263b;
+--primary:#00b4d8;
+--secondary:#0077b6;
+--text:#ffffff;
+--text2:#cbd5e1;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+background:rgba(13,27,42,.95);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:var(--primary);
+text-decoration:none;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+.btn{
+padding:12px 25px;
+background:var(--primary);
+border-radius:30px;
+text-decoration:none;
+color:white;
+display:inline-block;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+background:var(--secondary);
+}
+
+section{
+padding:120px 8%;
+}
+
+.home{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.home-text{
+flex:1;
+}
+
+.home-text h1{
+font-size:60px;
+}
+
+.home-text span{
+color:var(--primary);
+}
+
+.home-text p{
+margin-top:20px;
+line-height:1.8;
+color:var(--text2);
+}
+
+.badge{
+display:inline-block;
+background:rgba(0,180,216,.15);
+color:var(--primary);
+padding:8px 15px;
+border-radius:30px;
+margin-bottom:20px;
+}
+
+.home-img{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.home-img img{
+width:300px;
+height:300px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid var(--primary);
+box-shadow:0 0 40px rgba(0,180,216,.5);
+}
+
+.title{
+font-size:40px;
+color:var(--primary);
+text-align:center;
+margin-bottom:50px;
+}
+
+.about{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+align-items:center;
+}
+
+.about-img img{
+width:320px;
+height:400px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text p{
+line-height:1.9;
+margin-bottom:15px;
+color:var(--text2);
+}
+
+.cards{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.card p{
+color:var(--text2);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin-bottom:10px;
+}
+
+.social{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.social a{
+padding:15px 20px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+}
+
+.social a:hover{
+background:var(--secondary);
+}
+
+.galeria{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.galeria img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+.contact-form{
+max-width:700px;
+margin:40px auto 0;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+border:none;
+outline:none;
+border-radius:12px;
+background:var(--card);
+color:white;
+}
+
+.contact-form textarea{
+height:150px;
+resize:none;
+}
+
+.contact-form button{
+background:#25D366;
+color:white;
+padding:15px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+.contact-form button:hover{
+background:#1da851;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#08121d;
+color:#cbd5e1;
+}
+
+section{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+nav{
+display:none;
+}
+
+.home{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.home-text h1{
+font-size:40px;
+}
+
+.home-img img{
+width:220px;
+height:220px;
+}
+
+.about{
+flex-direction:column;
+text-align:center;
+}
+
+.about-img img{
+width:250px;
+height:300px;
+}
+
+.title{
+font-size:30px;
+}
+
+}
